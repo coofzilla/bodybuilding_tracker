@@ -80,3 +80,14 @@ class WorkoutTracker:
     def get_progress(self, workout_day, exercise):
         return self.data[(self.data['workout_day'] == workout_day) &
                         (self.data['exercise'] == exercise)]
+
+    def print_options(self):
+        print("\nAvailable Workout Days:")
+        for day in self.workout_days.keys():
+            print(f"- {day}")
+
+        print("\nExercises for each day:")
+        for day, exercises in self.workout_days.items():
+            print(f"\n{day}:")
+            for exercise in exercises.keys():
+                print(f"  - {exercise}")
